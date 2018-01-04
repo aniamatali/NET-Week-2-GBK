@@ -9,11 +9,12 @@
 
 <p>@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)</p>
 
-
+<hr>
  @foreach (var experience in Model.Experiences)
  {
     <p>@experience.Description</p>
-    <p>@experience.Price</p>
+    <p>Price: $@experience.Price</p>
+    <hr>
 }
 
 
