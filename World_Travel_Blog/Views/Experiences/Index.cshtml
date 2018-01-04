@@ -1,0 +1,39 @@
+﻿@model IEnumerable<World_Travel_Blog.Models.Experience>
+
+@{
+    ViewData["Title"] = "Experience";
+
+}
+<h2>To Do List</h2>
+<hr />
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Location.Name)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var listExperience in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelExperience => listExperience.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelExperience => listExperience.Location.Name)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = listExperience.ExperienceId }) |
+                @Html.ActionLink("Details", "Details", new { id = listExperience.ExperienceId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = listExperience.ExperienceId })
+            </td>
+        </tr>
+    }
+</table>
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>

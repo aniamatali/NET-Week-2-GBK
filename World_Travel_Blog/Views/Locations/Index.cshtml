@@ -1,0 +1,33 @@
+﻿@model IEnumerable<World_Travel_Blog.Models.Location>
+
+@{
+    ViewData["Title"] = "Location";
+
+}
+<h2>To Do List</h2>
+<hr />
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var listLocation in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelLocation => listLocation.Name)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = listLocation.LocationId }) |
+                @Html.ActionLink("Details", "Details", new { id = listLocation.LocationId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = listLocation.LocationId })
+            </td>
+        </tr>
+    }
+</table>
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>

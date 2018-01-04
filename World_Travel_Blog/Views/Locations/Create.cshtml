@@ -1,0 +1,18 @@
+﻿@model World_Travel_Blog.Models.Location
+
+@{
+    ViewData["Title"] = "Location - Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>Create a new experience</h2>
+<hr />
+
+@using (Html.BeginForm())
+{
+    @Html.LabelFor(model => model.Name)
+    @Html.EditorFor(model => model.Name)
+
+    <input type="submit" value="Create" class="btn btn-default" />
+}
+
+@Html.ActionLink("Back to List", "Index")
