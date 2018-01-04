@@ -21,7 +21,7 @@ namespace World_Travel_Blog.Controllers
             var thisLocation = db.Locations
                                  .Include(x => x.Experiences)
                                  .FirstOrDefault(items => items.LocationId == id);
-            //ViewBag.MyExperiences = new SelectList(db.Experiences, "ExperienceId", "Description", "LocationId");
+
             return View(thisLocation);
         }
 

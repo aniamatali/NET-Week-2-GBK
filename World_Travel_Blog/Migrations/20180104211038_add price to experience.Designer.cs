@@ -8,9 +8,10 @@ using World_Travel_Blog.Models;
 namespace World_Travel_Blog.Migrations
 {
     [DbContext(typeof(WorldTravelDbContext))]
-    partial class WorldTravelDbContextModelSnapshot : ModelSnapshot
+    [Migration("20180104211038_add price to experience")]
+    partial class addpricetoexperience
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.1.2");

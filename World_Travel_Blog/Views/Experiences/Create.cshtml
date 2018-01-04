@@ -12,8 +12,12 @@
     @Html.LabelFor(model => model.Description)
     @Html.EditorFor(model => model.Description)
 
+    @Html.LabelFor(model => model.Price)
+    @Html.EditorFor(model => model.Price) 
+
     @Html.LabelFor(model => model.LocationId)
     @Html.DropDownList("LocationId")
+
 
     <input type="submit" value="Create" class="btn btn-default" />
 }
