@@ -1,3 +1,22 @@
-.blah {
-  background-color:orange;
+
+.container {
+  margin-top:20px;
+}
+
+.contentbackground {
+  background-color:white;
+  color:black;
+  padding:15px;
+  border-left:2px solid black;
+  border-right:2px solid black;
+  border-bottom:2px solid black;
+  font-family: 'Roboto', sans-serif;
+}
+
+.contentbackground h2 {
+  text-align:center;
+}
+
+.contentbackground h3 {
+  margin-top:10px;
 }
