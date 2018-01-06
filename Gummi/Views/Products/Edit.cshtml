@@ -50,10 +50,11 @@ background-image:url("/images/background.jpg");
   margin-left:18px;
 }
 th {
-    font-family: 'Questrial', sans-serif;
+    font-family: 'Arial';
 }
 td {
-    font-family: 'Assistant', sans-serif;
+    font-family: 'Questrial', sans-serif;
+    font-size:20px;
 }
 #gbk {
   color:#bbe3ed;
@@ -81,27 +82,47 @@ p {
   font-size:22px;
   font-family: 'Assistant', sans-serif;
 }
+
+
+select {
+  margin-top:5px;
+}
+
 </style>
 
 <div class="contentbackground">
-<h4>Edit this Product: @Html.DisplayFor(model => model.Description)</h4>
+
 @using (Html.BeginForm())
 {
+  <div class="card bg-dark">
+  <div class="card-header bg-primary">
+    <h4>Edit this Product: @Html.DisplayFor(model => model.Description)</h4>
     @Html.HiddenFor(model => model.ProductId)
-
-    @Html.LabelFor(model => model.Description)
-    @Html.EditorFor(model => model.Description)
-
-    @Html.LabelFor(model => model.Price)
-    @Html.EditorFor(model => model.Price)
-
-    @Html.LabelFor(model => model.Category)
-    @Html.DropDownList("CategoryId")
-
-    @Html.LabelFor(model => model.ProductInfo)
-    @Html.EditorFor(model => model.ProductInfo)
-
+    </div>
+    <div class="card-body">
+    <table class="table table-hover table-dark">
+    <tr>
+    <th>@Html.LabelFor(model => model.Description)</th>
+    <td>@Html.EditorFor(model => model.Description)</td>
+    </tr>
+    <tr>
+    <th>@Html.LabelFor(model => model.Price)</th>
+    <td>@Html.EditorFor(model => model.Price)</td>
+    </tr>
+    <tr>
+    <th>@Html.LabelFor(model => model.Category)</th>
+    <td>@Html.DropDownList("CategoryId")</td>
+    </tr>
+    <tr>
+    <th>@Html.LabelFor(model => model.ProductInfo)</th>
+    <td>@Html.EditorFor(model => model.ProductInfo)</td>
+    </tr>
+    </table>
+    </div>
+    <div class="card-footer">
     <input type="submit" value="Save" class="btn btn-default" />
+    </div>
+    </div>
 }
 @Html.ActionLink("Back to List", "Index")
 </div>
