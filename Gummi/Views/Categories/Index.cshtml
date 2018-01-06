@@ -2,13 +2,12 @@
 
 @{
     ViewData["Title"] = "Category";
-
 }
 
 <div class="contentbackground">
 <h3>Categories</h3>
 
-<table class="table">
+<table class="table table-sm table-hover table-dark">
     <tr>
         <th>
             Merchandise
@@ -22,7 +21,7 @@
             <td>
                 @Html.DisplayFor(modelCategory => listCategory.Name)
             </td>
-            <td>
+            <td class="cellright">
                 @Html.ActionLink("Edit", "Edit", new { id = listCategory.CategoryId }) |
                 @Html.ActionLink("Details", "Details", new { id = listCategory.CategoryId }) |
                 @Html.ActionLink("Delete", "Delete", new { id = listCategory.CategoryId })
@@ -31,6 +30,6 @@
     }
 </table>
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("New Category", "Create")
 </p>
 </div>

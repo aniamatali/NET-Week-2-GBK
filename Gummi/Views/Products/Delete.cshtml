@@ -6,11 +6,48 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Are you sure you want to delete this?</h2>
-<hr />
+<style>
+.container {
+  margin-top:20px;
+}
+.contentbackground {
+  background-color:black;
+  color:white;
+  padding-left:15px;
+  padding-right:15px;
+  padding-top:30px;
+  padding-bottom:30px;
+  border-left:2px solid black;
+  border-right:2px solid black;
+  border-bottom:2px solid black;
+  font-family: 'Roboto', sans-serif;
+}
+.contentbackground h2 {
+  text-align:center;
+}
+.contentbackground h3 {
+  margin-top:10px;
+}
+.navbar {
+  font-family: 'Roboto', sans-serif;
+  border-bottom:1px solid red;
+}
+.cellright {
+  text-align:right;
+}
+input {
+  margin-left: 10px;
+}
+.btn-dark {
+  border-radius:0px;
+}
+</style>
+
+<div class="contentbackground">
 @Html.DisplayNameFor(model => model.Description): @Html.DisplayFor(model => model.Description)
 @using (Html.BeginForm())
 {
     <input type="submit" value="Delete" />
 }
 <p>@Html.ActionLink("Back to list", "Index")</p>
+</div>

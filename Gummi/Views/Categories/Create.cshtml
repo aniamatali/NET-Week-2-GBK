@@ -4,9 +4,46 @@
     ViewData["Title"] = "Category - Create";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<h2>Create a new experience</h2>
-<hr />
+<style>
+.container {
+  margin-top:20px;
+}
+.contentbackground {
+  background-color:black;
+  color:white;
+  padding-left:15px;
+  padding-right:15px;
+  padding-top:30px;
+  padding-bottom:30px;
+  border-left:2px solid black;
+  border-right:2px solid black;
+  border-bottom:2px solid black;
+  font-family: 'Roboto', sans-serif;
+}
+.contentbackground h2 {
+  text-align:center;
+}
+.contentbackground h3 {
+  margin-top:10px;
+}
+.navbar {
+  font-family: 'Squada One', cursive;
+  font-size:30px;
+  border-bottom:1px solid silver;
+  padding-bottom:0px;
+}
+.navbar li {
+  margin-left:30px;
+}
+.navbar-brand {
+  font-size:40px;
+}
+.cellright {
+  text-align:right;
+}
+</style>
 
+<div class="contentbackground">
 @using (Html.BeginForm())
 {
     @Html.LabelFor(model => model.Name)
@@ -16,3 +53,4 @@
 }
 
 @Html.ActionLink("Back to List", "Index")
+</div>

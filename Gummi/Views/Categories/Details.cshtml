@@ -4,12 +4,48 @@
     ViewData["Title"] = "Category - Details";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<h2>Category Details</h2>
-<hr />
+
+<style>
+.container {
+  margin-top:20px;
+}
+.contentbackground {
+  background-color:black;
+  color:white;
+  padding-left:15px;
+  padding-right:15px;
+  padding-top:30px;
+  padding-bottom:30px;
+  border-left:2px solid black;
+  border-right:2px solid black;
+  border-bottom:2px solid black;
+  font-family: 'Roboto', sans-serif;
+}
+.contentbackground h2 {
+  text-align:center;
+}
+.contentbackground h3 {
+  margin-top:10px;
+}
+.navbar {
+  font-family: 'Roboto', sans-serif;
+  border-bottom:1px solid red;
+}
+.cellright {
+  text-align:right;
+}
+input {
+  margin-left: 10px;
+}
+.btn-dark {
+  border-radius:0px;
+}
+</style>
+
+<div class="contentbackground">
 
 <p>@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)</p>
 
-<hr>
  @foreach (var experience in Model.Products)
  {
     <p>@experience.Description</p>
@@ -17,5 +53,5 @@
     <hr>
 }
 
-
 <p>@Html.ActionLink("Edit", "Edit", new { id = Model.CategoryId }) | @Html.ActionLink("Back to List", "Index")</p>
+</div>

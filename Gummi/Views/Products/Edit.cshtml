@@ -4,9 +4,45 @@
     ViewData["Title"] = "Product - Edit";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<h2>Edit</h2>
-<hr />
-<h4>Edit this experience: @Html.DisplayFor(model => model.Description)</h4>
+<style>
+.container {
+  margin-top:20px;
+}
+.contentbackground {
+  background-color:black;
+  color:white;
+  padding-left:15px;
+  padding-right:15px;
+  padding-top:30px;
+  padding-bottom:30px;
+  border-left:2px solid black;
+  border-right:2px solid black;
+  border-bottom:2px solid black;
+  font-family: 'Roboto', sans-serif;
+}
+.contentbackground h2 {
+  text-align:center;
+}
+.contentbackground h3 {
+  margin-top:10px;
+}
+.navbar {
+  font-family: 'Roboto', sans-serif;
+  border-bottom:1px solid red;
+}
+.cellright {
+  text-align:right;
+}
+input {
+  margin-left: 10px;
+}
+.btn-dark {
+  border-radius:0px;
+}
+</style>
+
+<div class="contentbackground">
+<h4>Edit this Product: @Html.DisplayFor(model => model.Description)</h4>
 @using (Html.BeginForm())
 {
     @Html.HiddenFor(model => model.ProductId)
@@ -17,9 +53,10 @@
     @Html.LabelFor(model => model.Price)
     @Html.EditorFor(model => model.Price)
 
-    @Html.LabelFor(model => model.CategoryId)
+    @Html.LabelFor(model => model.Category)
     @Html.DropDownList("CategoryId")
 
     <input type="submit" value="Save" class="btn btn-default" />
 }
 @Html.ActionLink("Back to List", "Index")
+</div>

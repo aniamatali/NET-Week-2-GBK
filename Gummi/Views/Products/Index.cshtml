@@ -5,8 +5,8 @@
 
 }
 <div class="contentbackground">
-<h3>Products</h3>
-<table class="table">
+<h3>Inventory</h3>
+<table class="table table-sm table-hover table-dark">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.Description)
@@ -32,7 +32,7 @@
             <td>
                 $@Html.DisplayFor(modelProduct => listProduct.Price)
             </td>
-            <td>
+            <td class="cellright">
                 @Html.ActionLink("Edit", "Edit", new { id = listProduct.ProductId }) |
                 @Html.ActionLink("Details", "Details", new { id = listProduct.ProductId }) |
                 @Html.ActionLink("Delete", "Delete", new { id = listProduct.ProductId })
@@ -41,6 +41,6 @@
     }
 </table>
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Add Inventory", "Create")
 </p>
 </div>
