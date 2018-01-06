@@ -66,6 +66,10 @@ td {
   text-shadow: 9px 12px 25px black;
 }
 
+.deletelink a{
+  color:red;
+}
+
 .navbar-nav {
   margin-left:50%;
 }

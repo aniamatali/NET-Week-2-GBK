@@ -24,7 +24,9 @@
             <td class="cellright">
                 @Html.ActionLink("Edit", "Edit", new { id = listCategory.CategoryId }) |
                 @Html.ActionLink("Details", "Details", new { id = listCategory.CategoryId }) |
+                <span class="deletelink"><a>
                 @Html.ActionLink("Delete", "Delete", new { id = listCategory.CategoryId })
+                </a></span>
             </td>
         </tr>
     }

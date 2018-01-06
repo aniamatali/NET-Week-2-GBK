@@ -35,7 +35,9 @@
             <td class="cellright">
                 @Html.ActionLink("Edit", "Edit", new { id = listProduct.ProductId }) |
                 @Html.ActionLink("Details", "Details", new { id = listProduct.ProductId }) |
+                <span class="deletelink"><a>
                 @Html.ActionLink("Delete", "Delete", new { id = listProduct.ProductId })
+                </a></span>
             </td>
         </tr>
     }
