@@ -98,6 +98,9 @@ p {
     @Html.LabelFor(model => model.Category)
     @Html.DropDownList("CategoryId")
 
+    @Html.LabelFor(model => model.ProductInfo)
+    @Html.EditorFor(model => model.ProductInfo)
+
     <input type="submit" value="Save" class="btn btn-default" />
 }
 @Html.ActionLink("Back to List", "Index")
