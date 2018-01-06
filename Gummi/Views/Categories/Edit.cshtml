@@ -1,8 +1,6 @@
 ﻿@model Gummi.Models.Category
 
-@{
-    ViewData["Title"] = "Category";
-}
+
 
 <style>
 body {
@@ -93,7 +91,7 @@ p {
     @Html.EditorFor(model => model.Name)
 
 
-    <input type="submit" value="Save" class="btn btn-dark" />
+    <input type="submit" value="Save" class="btn btn-default" />
 }
 @Html.ActionLink("Back to List", "Index")
 

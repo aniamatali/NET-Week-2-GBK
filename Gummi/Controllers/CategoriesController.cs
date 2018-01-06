@@ -1,4 +1,3 @@
-﻿using System.Collections.Generic;
 using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -14,18 +13,14 @@ namespace Gummi.Controllers
 		{
 			return View(db.Categories.ToList());
 		}
+		public IActionResult Details(int id)
+		{
+			var thisCategory = db.Categories
+			.Include(x => x.Products)
+			.FirstOrDefault(items => items.CategoryId == id);
 
-
-        public IActionResult Details(int id)
-        {
-            var thisCategory = db.Categories
-                                 .Include(x => x.Products)
-                                 .FirstOrDefault(items => items.CategoryId == id);
-
-            return View(thisCategory);
-        }
-
-
+			return View(thisCategory);
+		}
 		public IActionResult Create()
 		{
 			return View();
