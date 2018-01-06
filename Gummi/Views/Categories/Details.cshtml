@@ -89,8 +89,14 @@ p {
 
  @foreach (var experience in Model.Products)
  {
+   <div class="card bg-dark">
+   <div class="card-header bg-primary">
     <p>@experience.Description</p>
+    </div>
+    <div class="card-body">
     <p>Price: $@experience.Price</p>
+    </div>
+  </div>
     <hr>
 }
 
