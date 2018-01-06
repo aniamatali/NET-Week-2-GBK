@@ -15,24 +15,6 @@ namespace Gummi.Migrations
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.1.2");
 
-            modelBuilder.Entity("Gummi.Models.Product", b =>
-                {
-                    b.Property<int>("ProductId")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<string>("Description");
-
-                    b.Property<int>("CategoryId");
-
-                    b.Property<int>("Price");
-
-                    b.HasKey("ProductId");
-
-                    b.HasIndex("CategoryId");
-
-                    b.ToTable("Products");
-                });
-
             modelBuilder.Entity("Gummi.Models.Category", b =>
                 {
                     b.Property<int>("CategoryId")
@@ -43,6 +25,26 @@ namespace Gummi.Migrations
                     b.HasKey("CategoryId");
 
                     b.ToTable("Categories");
+                });
+
+            modelBuilder.Entity("Gummi.Models.Product", b =>
+                {
+                    b.Property<int>("ProductId")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<int>("CategoryId");
+
+                    b.Property<string>("Description");
+
+                    b.Property<int>("Price");
+
+                    b.Property<string>("ProductInfo");
+
+                    b.HasKey("ProductId");
+
+                    b.HasIndex("CategoryId");
+
+                    b.ToTable("Products");
                 });
 
             modelBuilder.Entity("Gummi.Models.Product", b =>
