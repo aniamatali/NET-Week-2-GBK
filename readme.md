@@ -4,10 +4,8 @@ GummiBear Kingdom is an application for a make-believe store.  You can add Categ
 # Features
 
   - CATEGORIES
-  - PRODUCTS
-
     ![](https://github.com/aniamatali/.NET-Solo/blob/master/Gummi/wwwroot/images/categories.JPG)
-
+  - PRODUCTS
     ![](https://github.com/aniamatali/.NET-Solo/blob/master/Gummi/wwwroot/images/products.JPG)
 
 ### Tech
