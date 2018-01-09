@@ -42,6 +42,7 @@ namespace Gummi.Controllers
 			var thisCategory = db.Categories.FirstOrDefault(items => items.CategoryId == id);
 			return View(thisCategory);
 		}
+
 		[HttpPost]
 		public IActionResult Edit(Category category)
 		{
@@ -49,6 +50,7 @@ namespace Gummi.Controllers
 			db.SaveChanges();
 			return RedirectToAction("Index");
 		}
+
 		public ActionResult Delete(int id)
 		{
 			var thisCategory = db.Categories.FirstOrDefault(items => items.CategoryId == id);
