@@ -43,9 +43,9 @@ namespace Gummi.Controllers
 			return View(thisCategory);
 		}
 		[HttpPost]
-		public IActionResult Edit(Category item)
+		public IActionResult Edit(Category category)
 		{
-			db.Entry(item).State = EntityState.Modified;
+			db.Entry(category).State = EntityState.Modified;
 			db.SaveChanges();
 			return RedirectToAction("Index");
 		}

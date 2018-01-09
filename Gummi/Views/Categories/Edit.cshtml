@@ -86,7 +86,7 @@ p {
 @using (Html.BeginForm())
 {
 
-
+    @Html.HiddenFor(model => model.CategoryId)
     @Html.LabelFor(model => model.Name)
     @Html.EditorFor(model => model.Name)
 
