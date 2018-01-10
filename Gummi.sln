@@ -2,7 +2,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26730.12
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gummi", "Gummi\Gummi.csproj", "{D90D4BC3-E0E9-4110-9A2B-4D3A306DA0C4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gummi", "Gummi\Gummi.csproj", "{D90D4BC3-E0E9-4110-9A2B-4D3A306DA0C4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gummi.Tests", "Gummi.Tests\Gummi.Tests.csproj", "{B2705F65-453C-4AC7-ADF8-6D772202BDDA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -14,6 +16,10 @@ Global
 		{D90D4BC3-E0E9-4110-9A2B-4D3A306DA0C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D90D4BC3-E0E9-4110-9A2B-4D3A306DA0C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D90D4BC3-E0E9-4110-9A2B-4D3A306DA0C4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B2705F65-453C-4AC7-ADF8-6D772202BDDA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2705F65-453C-4AC7-ADF8-6D772202BDDA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B2705F65-453C-4AC7-ADF8-6D772202BDDA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2705F65-453C-4AC7-ADF8-6D772202BDDA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

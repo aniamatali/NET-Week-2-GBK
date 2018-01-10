@@ -8,24 +8,25 @@ namespace Gummi.Controllers
 {
   public class ProductsController : Controller
   {
+        
     private GummiDbContext db = new GummiDbContext();
     public IActionResult Index()
     {
       return View(db.Products.Include(items => items.Category).ToList());
     }
+
     public IActionResult Details(int id)
     {
       var thisProduct = db.Products.FirstOrDefault(items => items.ProductId == id);
-
-
-
       return View(thisProduct);
     }
+
     public IActionResult Create()
     {
       ViewBag.CategoryId = new SelectList(db.Categories, "CategoryId", "Name");
       return View();
     }
+
     [HttpPost]
     public IActionResult Create(Product item)
     {
@@ -33,6 +34,7 @@ namespace Gummi.Controllers
       db.SaveChanges();
       return RedirectToAction("Index");
     }
+
     public IActionResult Edit(int id)
     {
       var thisProduct = db.Products.FirstOrDefault(items => items.ProductId == id);
@@ -46,11 +48,13 @@ namespace Gummi.Controllers
       db.SaveChanges();
       return RedirectToAction("Index");
     }
+
     public ActionResult Delete(int id)
     {
       var thisProduct = db.Products.FirstOrDefault(items => items.ProductId == id);
       return View(thisProduct);
     }
+
     [HttpPost, ActionName("Delete")]
     public IActionResult DeleteConfirmed(int id)
     {
