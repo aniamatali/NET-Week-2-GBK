@@ -9,6 +9,15 @@
 
     <p>This app was created for the intention of users to keep track of inventory in their imaginary store.  You can create products to store reviews under and features will be added in the future such as ratings and perhaps some filters to view specific types of reviews.  Currently it has full CRUD capabilities for Reviews but only CRD for Products.</p>
 
+    <br />
+    <h4>Reviewed Products</h4>
+    @foreach (var listproduct in Model)
+    {
+
+        <h4>@Html.ActionLink((string)listproduct.Name, "Details", new { id = listproduct.ProductId })</h4>
+    }
+
+
 
 </div>
     

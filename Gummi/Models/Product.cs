@@ -13,6 +13,8 @@ namespace Gummi.Models
         public int Price { get; set; }
 		public virtual ICollection<Review> Reviews { get; set; }
 
+
+
         public override bool Equals(System.Object otherProduct)
         {
             if (!(otherProduct is Product))
