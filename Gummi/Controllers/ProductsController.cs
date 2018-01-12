@@ -35,7 +35,9 @@ namespace Gummi.Controllers
 
         public IActionResult Details(int id)
         {
-            Product thisProduct = productRepo.Products.FirstOrDefault(x => x.ProductId == id);
+            var thisProduct = productRepo.Products
+                                 .Include(x => x.Reviews)
+                                 .FirstOrDefault(items => items.ProductId == id);
             return View(thisProduct);
         }
 

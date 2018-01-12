@@ -85,20 +85,20 @@ p {
 
 <div class="contentbackground">
 
-<p>@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)</p>
+    <p>@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)</p>
 
- @foreach (var experience in Model.Reviews)
- {
-   <div class="card bg-dark">
-   <div class="card-header bg-primary">
-    <p>@experience.Description</p>
-    </div>
-    <div class="card-body">
-    <p>Rating: $@experience.Rating</p>
-    </div>
-  </div>
-    <hr>
-}
+    @foreach (var review in Model.Reviews)
+    {
+        <div class="card bg-dark">
+            <div class="card-header bg-primary">
+                <p>@review.Description</p>
+            </div>
+            <div class="card-body">
+                <p>Rating: @review.Rating</p>
+            </div>
+        </div>
+        <hr>
+    }
 
 <p>@Html.ActionLink("Edit", "Edit", new { id = Model.ProductId }) | @Html.ActionLink("Back to List", "Index")</p>
 </div>
