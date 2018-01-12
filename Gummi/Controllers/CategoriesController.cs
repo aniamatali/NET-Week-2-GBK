@@ -19,7 +19,7 @@ namespace Gummi.Controllers
         public IActionResult Details(int id)
         {
             var thisCategory = db.Categories
-                                 .Include(x => x.Products)
+                                 .Include(x => x.Reviews)
                                  .FirstOrDefault(items => items.CategoryId == id);
 
             return View(thisCategory);

@@ -1,7 +1,7 @@
-﻿@model Gummi.Models.Product
+﻿@model Gummi.Models.Review
 
 @{
-    ViewData["Title"] = "Product - Edit";
+    ViewData["Title"] = "Review - Edit";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -96,8 +96,8 @@ select {
 {
   <div class="card bg-dark">
   <div class="card-header bg-primary">
-    <h4>Edit this Product: @Html.DisplayFor(model => model.Description)</h4>
-    @Html.HiddenFor(model => model.ProductId)
+    <h4>Edit this Review: @Html.DisplayFor(model => model.Description)</h4>
+    @Html.HiddenFor(model => model.ReviewId)
     </div>
     <div class="card-body">
     <table class="table table-hover table-dark">
@@ -114,8 +114,8 @@ select {
     <td>@Html.DropDownList("CategoryId")</td>
     </tr>
     <tr>
-    <th>@Html.LabelFor(model => model.ProductInfo)</th>
-    <td>@Html.EditorFor(model => model.ProductInfo)</td>
+    <th>@Html.LabelFor(model => model.ReviewInfo)</th>
+    <td>@Html.EditorFor(model => model.ReviewInfo)</td>
     </tr>
     </table>
     </div>

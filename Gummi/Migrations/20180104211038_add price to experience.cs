@@ -10,7 +10,7 @@ namespace Gummi.Migrations
         {
             migrationBuilder.AddColumn<int>(
                 name: "Price",
-                table: "Products",
+                table: "Reviews",
                 nullable: false,
                 defaultValue: 0);
         }
@@ -19,7 +19,7 @@ namespace Gummi.Migrations
         {
             migrationBuilder.DropColumn(
                 name: "Price",
-                table: "Products");
+                table: "Reviews");
         }
     }
 }

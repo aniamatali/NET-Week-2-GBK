@@ -6,19 +6,19 @@ using Gummi.Models;
 
 namespace Gummi.Controllers
 {
-  public class ProductsController : Controller
+  public class ReviewsController : Controller
   {
         
     private GummiDbContext db = new GummiDbContext();
     public IActionResult Index()
     {
-      return View(db.Products.Include(items => items.Category).ToList());
+      return View(db.Reviews.Include(items => items.Category).ToList());
     }
 
     public IActionResult Details(int id)
     {
-      var thisProduct = db.Products.FirstOrDefault(items => items.ProductId == id);
-      return View(thisProduct);
+      var thisReview = db.Reviews.FirstOrDefault(items => items.ReviewId == id);
+      return View(thisReview);
     }
 
     public IActionResult Create()
@@ -28,21 +28,21 @@ namespace Gummi.Controllers
     }
 
     [HttpPost]
-    public IActionResult Create(Product item)
+    public IActionResult Create(Review item)
     {
-      db.Products.Add(item);
+      db.Reviews.Add(item);
       db.SaveChanges();
       return RedirectToAction("Index");
     }
 
     public IActionResult Edit(int id)
     {
-      var thisProduct = db.Products.FirstOrDefault(items => items.ProductId == id);
+      var thisReview = db.Reviews.FirstOrDefault(items => items.ReviewId == id);
       ViewBag.CategoryId = new SelectList(db.Categories, "CategoryId", "Name");
-      return View(thisProduct);
+      return View(thisReview);
     }
     [HttpPost]
-    public IActionResult Edit(Product item)
+    public IActionResult Edit(Review item)
     {
       db.Entry(item).State = EntityState.Modified;
       db.SaveChanges();
@@ -51,15 +51,15 @@ namespace Gummi.Controllers
 
     public ActionResult Delete(int id)
     {
-      var thisProduct = db.Products.FirstOrDefault(items => items.ProductId == id);
-      return View(thisProduct);
+      var thisReview = db.Reviews.FirstOrDefault(items => items.ReviewId == id);
+      return View(thisReview);
     }
 
     [HttpPost, ActionName("Delete")]
     public IActionResult DeleteConfirmed(int id)
     {
-      var thisProduct = db.Products.FirstOrDefault(items => items.ProductId == id);
-      db.Products.Remove(thisProduct);
+      var thisReview = db.Reviews.FirstOrDefault(items => items.ReviewId == id);
+      db.Reviews.Remove(thisReview);
       db.SaveChanges();
       return RedirectToAction("Index");
     }

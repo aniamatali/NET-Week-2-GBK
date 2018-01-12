@@ -1,7 +1,7 @@
-﻿@model Gummi.Models.Product
+﻿@model Gummi.Models.Review
 
 @{
-    ViewData["Title"] = "Product - Create";
+    ViewData["Title"] = "Review - Create";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -94,8 +94,8 @@ p {
   @Html.LabelFor(model => model.Price)
   @Html.EditorFor(model => model.Price)
 
-  @Html.LabelFor(model => model.ProductInfo)
-  @Html.EditorFor(model => model.ProductInfo)
+  @Html.LabelFor(model => model.ReviewInfo)
+  @Html.EditorFor(model => model.ReviewInfo)
 
   @Html.LabelFor(model => model.Category)
   @Html.DropDownList("CategoryId")

@@ -3,15 +3,15 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Gummi.Models
 {
-	[Table("Products")]
-	public class Product
+	[Table("Reviews")]
+	public class Review
 	{
 		[Key]
-		public int ProductId { get; set; }
+		public int ReviewId { get; set; }
 		public string Description { get; set; }
     public int Price { get; set; }
 		public int CategoryId { get; set; }
-		public string ProductInfo {get; set;}
+		public string ReviewInfo {get; set;}
 		public virtual Category Category { get; set; }
 	}
 }

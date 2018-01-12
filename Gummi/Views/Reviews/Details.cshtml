@@ -1,11 +1,9 @@
-﻿
-@model Gummi.Models.Product
+﻿@model Gummi.Models.Review
 
 @{
-    ViewData["Title"] = "Product - Delete";
+    ViewData["Title"] = "Review - Details";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
 <style>
 body {
 background-image:url("/images/background.jpg");
@@ -84,12 +82,19 @@ p {
 }
 </style>
 
-<div class="contentbackground">
-@Html.DisplayNameFor(model => model.Description): @Html.DisplayFor(model => model.Description)
 
-@using (Html.BeginForm())
-{   <br>
-    <input type="submit" class="btn-danger" value="Delete" />
-}
-<p>@Html.ActionLink("Back to list", "Index")</p>
+<div class="contentbackground">
+
+<div class="card bg-dark">
+  <div class="card-header bg-primary">
+<p>@Html.DisplayFor(model => model.Description)</p>
+</div>
+<div class="card-body">
+<p>Price : $@Html.DisplayFor(model => model.Price)</p>
+<p>Review Information : @Html.DisplayFor(model => model.ReviewInfo)</p>
+</div>
+<div class="card-footer">
+<p>@Html.ActionLink("Edit", "Edit", new { id = Model.ReviewId }) | @Html.ActionLink("Back to List", "Index")</p>
+</div>
+</div>
 </div>

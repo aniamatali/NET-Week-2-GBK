@@ -1,7 +1,7 @@
-﻿@model IEnumerable<Gummi.Models.Product>
+﻿@model IEnumerable<Gummi.Models.Review>
 
 @{
-    ViewData["Title"] = "Product";
+    ViewData["Title"] = "Review";
 
 }
 <div class="contentbackground">
@@ -20,23 +20,23 @@
         <th></th>
     </tr>
 
-    @foreach (var listProduct in Model)
+    @foreach (var listReview in Model)
     {
         <tr>
             <td>
-                @Html.DisplayFor(modelProduct => listProduct.Description)
+                @Html.DisplayFor(modelReview => listReview.Description)
             </td>
             <td>
-                @Html.DisplayFor(modelProduct => listProduct.Category.Name)
+                @Html.DisplayFor(modelReview => listReview.Category.Name)
             </td>
             <td>
-                $@Html.DisplayFor(modelProduct => listProduct.Price)
+                $@Html.DisplayFor(modelReview => listReview.Price)
             </td>
             <td class="cellright">
-                @Html.ActionLink("Edit", "Edit", new { id = listProduct.ProductId }) |
-                @Html.ActionLink("Details", "Details", new { id = listProduct.ProductId }) |
+                @Html.ActionLink("Edit", "Edit", new { id = listReview.ReviewId }) |
+                @Html.ActionLink("Details", "Details", new { id = listReview.ReviewId }) |
                 <span class="deletelink"><a>
-                @Html.ActionLink("Delete", "Delete", new { id = listProduct.ProductId })
+                @Html.ActionLink("Delete", "Delete", new { id = listReview.ReviewId })
                 </a></span>
             </td>
         </tr>

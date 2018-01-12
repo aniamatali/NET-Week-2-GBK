@@ -8,29 +8,13 @@ using Gummi.Models;
 namespace Gummi.Migrations
 {
     [DbContext(typeof(GummiDbContext))]
-    [Migration("20180104165912_Initial")]
-    partial class Initial
+    [Migration("20180112174528_NamingConventionProductsToReviews")]
+    partial class NamingConventionProductsToReviews
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
-                .HasAnnotation("ReviewVersion", "1.1.2");
-
-            modelBuilder.Entity("Gummi.Models.Review", b =>
-                {
-                    b.Property<int>("ReviewId")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<string>("Description");
-
-                    b.Property<int>("CategoryId");
-
-                    b.HasKey("ReviewId");
-
-                    b.HasIndex("CategoryId");
-
-                    b.ToTable("Reviews");
-                });
+                .HasAnnotation("ProductVersion", "1.1.2");
 
             modelBuilder.Entity("Gummi.Models.Category", b =>
                 {
@@ -42,6 +26,26 @@ namespace Gummi.Migrations
                     b.HasKey("CategoryId");
 
                     b.ToTable("Categories");
+                });
+
+            modelBuilder.Entity("Gummi.Models.Review", b =>
+                {
+                    b.Property<int>("ReviewId")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<int>("CategoryId");
+
+                    b.Property<string>("Description");
+
+                    b.Property<int>("Price");
+
+                    b.Property<string>("ReviewInfo");
+
+                    b.HasKey("ReviewId");
+
+                    b.HasIndex("CategoryId");
+
+                    b.ToTable("Reviews");
                 });
 
             modelBuilder.Entity("Gummi.Models.Review", b =>

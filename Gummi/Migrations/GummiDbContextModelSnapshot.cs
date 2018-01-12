@@ -27,9 +27,9 @@ namespace Gummi.Migrations
                     b.ToTable("Categories");
                 });
 
-            modelBuilder.Entity("Gummi.Models.Product", b =>
+            modelBuilder.Entity("Gummi.Models.Review", b =>
                 {
-                    b.Property<int>("ProductId")
+                    b.Property<int>("ReviewId")
                         .ValueGeneratedOnAdd();
 
                     b.Property<int>("CategoryId");
@@ -38,19 +38,19 @@ namespace Gummi.Migrations
 
                     b.Property<int>("Price");
 
-                    b.Property<string>("ProductInfo");
+                    b.Property<string>("ReviewInfo");
 
-                    b.HasKey("ProductId");
+                    b.HasKey("ReviewId");
 
                     b.HasIndex("CategoryId");
 
-                    b.ToTable("Products");
+                    b.ToTable("Reviews");
                 });
 
-            modelBuilder.Entity("Gummi.Models.Product", b =>
+            modelBuilder.Entity("Gummi.Models.Review", b =>
                 {
                     b.HasOne("Gummi.Models.Category", "Category")
-                        .WithMany("Products")
+                        .WithMany("Reviews")
                         .HasForeignKey("CategoryId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
