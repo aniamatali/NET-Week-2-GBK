@@ -4,11 +4,11 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Gummi.Models
 {
-	[Table("Categories")]
-	public class Category
+	[Table("Products")]
+	public class Product
 	{
 		[Key]
-		public int CategoryId { get; set; }
+		public int ProductId { get; set; }
 		public string Name { get; set; }
 		public virtual ICollection<Review> Reviews { get; set; }
 	}

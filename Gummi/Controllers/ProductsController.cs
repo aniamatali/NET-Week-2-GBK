@@ -7,22 +7,22 @@ using Gummi.Models;
 
 namespace Gummi.Controllers
 {
-	public class CategoriesController : Controller
+	public class ProductsController : Controller
 	{
 		private GummiDbContext db = new GummiDbContext();
 		public IActionResult Index()
 		{
-			return View(db.Categories.ToList());
+			return View(db.Products.ToList());
 		}
 
 
         public IActionResult Details(int id)
         {
-            var thisCategory = db.Categories
+            var thisProduct = db.Products
                                  .Include(x => x.Reviews)
-                                 .FirstOrDefault(items => items.CategoryId == id);
+                                 .FirstOrDefault(items => items.ProductId == id);
 
-            return View(thisCategory);
+            return View(thisProduct);
         }
 
 
@@ -31,36 +31,36 @@ namespace Gummi.Controllers
 			return View();
 		}
 		[HttpPost]
-		public IActionResult Create(Category item)
+		public IActionResult Create(Product item)
 		{
-			db.Categories.Add(item);
+			db.Products.Add(item);
 			db.SaveChanges();
 			return RedirectToAction("Index");
 		}
 		public IActionResult Edit(int id)
 		{
-			var thisCategory = db.Categories.FirstOrDefault(items => items.CategoryId == id);
-			return View(thisCategory);
+			var thisProduct = db.Products.FirstOrDefault(items => items.ProductId == id);
+			return View(thisProduct);
 		}
 
 		[HttpPost]
-		public IActionResult Edit(Category category)
+		public IActionResult Edit(Product product)
 		{
-			db.Entry(category).State = EntityState.Modified;
+			db.Entry(product).State = EntityState.Modified;
 			db.SaveChanges();
 			return RedirectToAction("Index");
 		}
 
 		public ActionResult Delete(int id)
 		{
-			var thisCategory = db.Categories.FirstOrDefault(items => items.CategoryId == id);
-			return View(thisCategory);
+			var thisProduct = db.Products.FirstOrDefault(items => items.ProductId == id);
+			return View(thisProduct);
 		}
 		[HttpPost, ActionName("Delete")]
 		public IActionResult DeleteConfirmed(int id)
 		{
-			var thisCategory = db.Categories.FirstOrDefault(items => items.CategoryId == id);
-			db.Categories.Remove(thisCategory);
+			var thisProduct = db.Products.FirstOrDefault(items => items.ProductId == id);
+			db.Products.Remove(thisProduct);
 			db.SaveChanges();
 			return RedirectToAction("Index");
 		}

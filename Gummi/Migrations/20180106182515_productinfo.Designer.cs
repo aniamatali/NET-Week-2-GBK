@@ -16,16 +16,16 @@ namespace Gummi.Migrations
             modelBuilder
                 .HasAnnotation("ReviewVersion", "1.1.2");
 
-            modelBuilder.Entity("Gummi.Models.Category", b =>
+            modelBuilder.Entity("Gummi.Models.Product", b =>
                 {
-                    b.Property<int>("CategoryId")
+                    b.Property<int>("ProductId")
                         .ValueGeneratedOnAdd();
 
                     b.Property<string>("Name");
 
-                    b.HasKey("CategoryId");
+                    b.HasKey("ProductId");
 
-                    b.ToTable("Categories");
+                    b.ToTable("Products");
                 });
 
             modelBuilder.Entity("Gummi.Models.Review", b =>
@@ -33,7 +33,7 @@ namespace Gummi.Migrations
                     b.Property<int>("ReviewId")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<int>("CategoryId");
+                    b.Property<int>("ProductId");
 
                     b.Property<string>("Description");
 
@@ -43,16 +43,16 @@ namespace Gummi.Migrations
 
                     b.HasKey("ReviewId");
 
-                    b.HasIndex("CategoryId");
+                    b.HasIndex("ProductId");
 
                     b.ToTable("Reviews");
                 });
 
             modelBuilder.Entity("Gummi.Models.Review", b =>
                 {
-                    b.HasOne("Gummi.Models.Category", "Category")
+                    b.HasOne("Gummi.Models.Product", "Product")
                         .WithMany("Reviews")
-                        .HasForeignKey("CategoryId")
+                        .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
         }

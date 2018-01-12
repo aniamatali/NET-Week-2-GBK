@@ -1,4 +1,4 @@
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Gummi.Models;
 
 namespace Gummi.Tests
@@ -6,34 +6,34 @@ namespace Gummi.Tests
 	[TestClass]
 	public class ProductTests
 	{
+        
 		[TestMethod]
-		public void GetDescription_ReturnsProductDescription_String()
+		public void GetName_ReturnsProducttName_String()
 		{
 			//Arrange
 			var product = new Product();
-            product.Description = "Wash the dog";
+			product.Name = "Keyboards";
 
 			//Act
-			var result = product.Description;
+			var result = product.Name;
 
 			//Assert
-			Assert.AreEqual("Wash the dog", result);
+			Assert.AreEqual("Keyboards", result);
 		}
 
 		[TestMethod]
-        public void GetPrice_ReturnsProductPrice_Int()
+		public void GetId_ReturnsId_Int()
 		{
 			//Arrange
 			var product = new Product();
-			product.Price = 5;
+			product.ProductId = 2;
 
 			//Act
-			var result = product.Price;
+			var result = product.ProductId;
 
 			//Assert
-			Assert.AreEqual(5,result);
+			Assert.AreEqual(2, result);
 		}
-
 
 	}
 }

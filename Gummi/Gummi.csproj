@@ -6,11 +6,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Controllers\CategoriesController.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="wwwroot\" />
     <Folder Include="Views\Home\" />
     <Folder Include="Views\Shared\" />
     <Folder Include="Views\Reviews\" />
-    <Folder Include="Views\Categories\" />
+    <Folder Include="Views\Products\" />
   </ItemGroup>
 
   <ItemGroup>
@@ -34,4 +38,5 @@
      <Content Remove="Views\Home\About.cshtml" />
      <Content Remove="Views\Home\Contact.cshtml" />
    </ItemGroup>
+
 </Project>

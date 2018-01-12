@@ -1,13 +1,12 @@
-﻿@model Gummi.Models.Category
+﻿@model Gummi.Models.Product
 
 @{
-    ViewData["Title"] = "Category - Details";
+    ViewData["Title"] = "Product - Create";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
 <style>
 body {
-background-image:url("/images/background.jpg");
+background-image:url("../images/background.jpg");
 }
 .container {
   margin-top:1%;
@@ -84,21 +83,13 @@ p {
 </style>
 
 <div class="contentbackground">
+@using (Html.BeginForm())
+{
+    @Html.LabelFor(model => model.Name)
+    @Html.EditorFor(model => model.Name)
 
-<p>@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)</p>
-
- @foreach (var experience in Model.Reviews)
- {
-   <div class="card bg-dark">
-   <div class="card-header bg-primary">
-    <p>@experience.Description</p>
-    </div>
-    <div class="card-body">
-    <p>Price: $@experience.Price</p>
-    </div>
-  </div>
-    <hr>
+    <input type="submit" value="Create" class="btn btn-default" />
 }
 
-<p>@Html.ActionLink("Edit", "Edit", new { id = Model.CategoryId }) | @Html.ActionLink("Back to List", "Index")</p>
+@Html.ActionLink("Back to List", "Index")
 </div>

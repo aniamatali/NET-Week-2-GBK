@@ -12,7 +12,7 @@ namespace Gummi.Controllers
     private GummiDbContext db = new GummiDbContext();
     public IActionResult Index()
     {
-      return View(db.Reviews.Include(items => items.Category).ToList());
+      return View(db.Reviews.Include(items => items.Product).ToList());
     }
 
     public IActionResult Details(int id)
@@ -23,7 +23,7 @@ namespace Gummi.Controllers
 
     public IActionResult Create()
     {
-      ViewBag.CategoryId = new SelectList(db.Categories, "CategoryId", "Name");
+      ViewBag.ProductId = new SelectList(db.Products, "ProductId", "Name");
       return View();
     }
 
@@ -38,7 +38,7 @@ namespace Gummi.Controllers
     public IActionResult Edit(int id)
     {
       var thisReview = db.Reviews.FirstOrDefault(items => items.ReviewId == id);
-      ViewBag.CategoryId = new SelectList(db.Categories, "CategoryId", "Name");
+      ViewBag.ProductId = new SelectList(db.Products, "ProductId", "Name");
       return View(thisReview);
     }
     [HttpPost]

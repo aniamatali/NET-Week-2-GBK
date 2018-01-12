@@ -1,4 +1,4 @@
-﻿@model Gummi.Models.Category
+﻿@model Gummi.Models.Product
 
 
 
@@ -82,11 +82,11 @@ p {
 
 <div class="contentbackground">
 
-<h4>Rename this category: @Html.DisplayFor(model => model.Name)</h4>
+<h4>Rename this product: @Html.DisplayFor(model => model.Name)</h4>
 @using (Html.BeginForm())
 {
 
-    @Html.HiddenFor(model => model.CategoryId)
+    @Html.HiddenFor(model => model.ProductId)
     @Html.LabelFor(model => model.Name)
     @Html.EditorFor(model => model.Name)
 
