@@ -8,8 +8,8 @@ using Gummi.Models;
 namespace Gummi.Migrations
 {
     [DbContext(typeof(GummiDbContext))]
-    [Migration("20180112181350_RenamedCategoriesToProducts")]
-    partial class RenamedCategoriesToProducts
+    [Migration("20180112182927_PriceColumnAddedtoProduct")]
+    partial class PriceColumnAddedtoProduct
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -23,6 +23,8 @@ namespace Gummi.Migrations
 
                     b.Property<string>("Name");
 
+                    b.Property<int>("Price");
+
                     b.HasKey("ProductId");
 
                     b.ToTable("Products");
@@ -35,9 +37,9 @@ namespace Gummi.Migrations
 
                     b.Property<string>("Description");
 
-                    b.Property<int>("Rating");
-
                     b.Property<int>("ProductId");
+
+                    b.Property<int>("Rating");
 
                     b.Property<string>("ReviewInfo");
 

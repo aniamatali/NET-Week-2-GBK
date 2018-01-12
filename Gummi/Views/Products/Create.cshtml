@@ -85,8 +85,9 @@ p {
 <div class="contentbackground">
 @using (Html.BeginForm())
 {
-    @Html.LabelFor(model => model.Name)
-    @Html.EditorFor(model => model.Name)
+    <p>Product Name @Html.EditorFor(model => model.Name)</p>
+
+    <p>Enter Price @Html.EditorFor(model => model.Price)</p>
 
     <input type="submit" value="Create" class="btn btn-default" />
 }

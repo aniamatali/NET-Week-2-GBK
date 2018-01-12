@@ -8,8 +8,8 @@ using Gummi.Models;
 namespace Gummi.Migrations
 {
     [DbContext(typeof(GummiDbContext))]
-    [Migration("20180104211038_add price to experience")]
-    partial class addpricetoexperience
+    [Migration("20180104211038_add rating to experience")]
+    partial class addratingtoexperience
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -25,7 +25,7 @@ namespace Gummi.Migrations
 
                     b.Property<int>("ProductId");
 
-                    b.Property<int>("Price");
+                    b.Property<int>("Rating");
 
                     b.HasKey("ReviewId");
 

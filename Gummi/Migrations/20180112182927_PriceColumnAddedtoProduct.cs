@@ -4,13 +4,13 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Gummi.Migrations
 {
-    public partial class addratingtoexperience : Migration
+    public partial class PriceColumnAddedtoProduct : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.AddColumn<int>(
-                name: "Rating",
-                table: "Reviews",
+                name: "Price",
+                table: "Products",
                 nullable: false,
                 defaultValue: 0);
         }
@@ -18,8 +18,8 @@ namespace Gummi.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropColumn(
-                name: "Rating",
-                table: "Reviews");
+                name: "Price",
+                table: "Products");
         }
     }
 }

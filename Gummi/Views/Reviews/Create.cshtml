@@ -88,17 +88,17 @@ p {
 @using (Html.BeginForm())
 {
 
-  @Html.LabelFor(model => model.Description)
-  @Html.EditorFor(model => model.Description)
+<p>Description @Html.EditorFor(model => model.Description) </p>
+  
 
-  @Html.LabelFor(model => model.Price)
-  @Html.EditorFor(model => model.Price)
+<p>Rating @Html.EditorFor(model => model.Rating)</p>
 
-  @Html.LabelFor(model => model.ReviewInfo)
-  @Html.EditorFor(model => model.ReviewInfo)
 
-  @Html.LabelFor(model => model.Product)
-  @Html.DropDownList("ProductId")
+ <p>Author @Html.EditorFor(model => model.ReviewInfo)</p>
+
+
+ <p>@Html.DropDownList("ProductId") </p>
+
 
     <input type="submit" value="Create" class="btn btn-default" />
 }

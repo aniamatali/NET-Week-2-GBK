@@ -21,14 +21,14 @@ namespace Gummi.Tests
 		}
 
 		[TestMethod]
-        public void GetPrice_ReturnsReviewPrice_Int()
+        public void GetRating_ReturnsReviewRating_Int()
 		{
 			//Arrange
 			var review = new Review();
-			review.Price = 5;
+			review.Rating = 5;
 
 			//Act
-			var result = review.Price;
+			var result = review.Rating;
 
 			//Assert
 			Assert.AreEqual(5,result);

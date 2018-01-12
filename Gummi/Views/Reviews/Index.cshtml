@@ -5,17 +5,20 @@
 
 }
 <div class="contentbackground">
-<h3>Inventory</h3>
+<h3>Reviews</h3>
 <table class="table table-sm table-hover table-dark">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Description)
+            Product
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Product)
+            Author
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Price)
+            Review
+        </th>
+        <th>
+            Rating
         </th>
         <th></th>
     </tr>
@@ -24,13 +27,16 @@
     {
         <tr>
             <td>
-                @Html.DisplayFor(modelReview => listReview.Description)
-            </td>
-            <td>
                 @Html.DisplayFor(modelReview => listReview.Product.Name)
             </td>
             <td>
-                $@Html.DisplayFor(modelReview => listReview.Price)
+                @Html.DisplayFor(modelReview => listReview.ReviewInfo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelReview => listReview.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelReview => listReview.Rating)
             </td>
             <td class="cellright">
                 @Html.ActionLink("Edit", "Edit", new { id = listReview.ReviewId }) |
@@ -43,6 +49,6 @@
     }
 </table>
 <p>
-    @Html.ActionLink("Add Inventory", "Create")
+    @Html.ActionLink("Add Review", "Create")
 </p>
 </div>

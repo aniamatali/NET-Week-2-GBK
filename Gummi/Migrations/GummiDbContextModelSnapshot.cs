@@ -22,6 +22,8 @@ namespace Gummi.Migrations
 
                     b.Property<string>("Name");
 
+                    b.Property<int>("Price");
+
                     b.HasKey("ProductId");
 
                     b.ToTable("Products");
@@ -34,9 +36,9 @@ namespace Gummi.Migrations
 
                     b.Property<string>("Description");
 
-                    b.Property<int>("Price");
-
                     b.Property<int>("ProductId");
+
+                    b.Property<int>("Rating");
 
                     b.Property<string>("ReviewInfo");
 
