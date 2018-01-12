@@ -12,5 +12,23 @@ namespace Gummi.Models
 		public string Name { get; set; }
         public int Price { get; set; }
 		public virtual ICollection<Review> Reviews { get; set; }
-	}
+
+        public override bool Equals(System.Object otherProduct)
+        {
+            if (!(otherProduct is Product))
+            {
+                return false;
+            }
+            else
+            {
+                Product newItem = (Product)otherProduct;
+                return this.ProductId.Equals(newItem.ProductId);
+            }
+        }
+
+        public override int GetHashCode()
+        {
+            return this.ProductId.GetHashCode();
+        }
+    }
 }

@@ -9,60 +9,73 @@ namespace Gummi.Controllers
 {
 	public class ProductsController : Controller
 	{
-		private GummiDbContext db = new GummiDbContext();
+        private IProductRepository productRepo;  // New!
+
+        public ProductsController(IProductRepository repo = null)
+        {
+            if (repo == null)
+            {
+                this.productRepo = new EFProductRepository();
+            }
+            else
+            {
+                this.productRepo = repo;
+            }
+        }
+
 		public IActionResult Index()
 		{
-			return View(db.Products.ToList());
+			return View(productRepo.Products.ToList());
 		}
 
+        public IActionResult Create()
+        {
+            return View();
+        }
 
         public IActionResult Details(int id)
         {
-            var thisProduct = db.Products
-                                 .Include(x => x.Reviews)
-                                 .FirstOrDefault(items => items.ProductId == id);
-
+            Product thisProduct = productRepo.Products.FirstOrDefault(x => x.ProductId == id);
             return View(thisProduct);
         }
 
-
-		public IActionResult Create()
-		{
-			return View();
-		}
 		[HttpPost]
-		public IActionResult Create(Product item)
+		public IActionResult Create(Product product)
 		{
-			db.Products.Add(item);
-			db.SaveChanges();
-			return RedirectToAction("Index");
-		}
+            productRepo.Save(product);   // Updated
+            // Removed db.SaveChanges() call
+            return RedirectToAction("Index");
+        }
+
 		public IActionResult Edit(int id)
 		{
-			var thisProduct = db.Products.FirstOrDefault(items => items.ProductId == id);
-			return View(thisProduct);
-		}
+            // Updated:
+            Product thisProduct = productRepo.Products.FirstOrDefault(x => x.ProductId == id);
+            return View(thisProduct);
+        }
 
 		[HttpPost]
 		public IActionResult Edit(Product product)
 		{
-			db.Entry(product).State = EntityState.Modified;
-			db.SaveChanges();
-			return RedirectToAction("Index");
-		}
+            productRepo.Edit(product);   // Updated!
+            // Removed db.SaveChanges() call
+            return RedirectToAction("Index");
+        }
 
-		public ActionResult Delete(int id)
+		public IActionResult Delete(int id)
 		{
-			var thisProduct = db.Products.FirstOrDefault(items => items.ProductId == id);
-			return View(thisProduct);
-		}
-		[HttpPost, ActionName("Delete")]
-		public IActionResult DeleteConfirmed(int id)
-		{
-			var thisProduct = db.Products.FirstOrDefault(items => items.ProductId == id);
-			db.Products.Remove(thisProduct);
-			db.SaveChanges();
-			return RedirectToAction("Index");
-		}
-	}
+            Product thisProduct = productRepo.Products.FirstOrDefault(x => x.ProductId == id);
+            return View(thisProduct);
+        }
+
+        [HttpPost, ActionName("Delete")]
+        public IActionResult DeleteConfirmed(int id)
+        {
+            // Updated:
+            Product thisProduct = productRepo.Products.FirstOrDefault(x => x.ProductId == id);
+            productRepo.Remove(thisProduct);   // Updated!
+            // Removed db.SaveChanges() call
+            return RedirectToAction("Index");
+        }
+    }
 }
