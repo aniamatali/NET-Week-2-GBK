@@ -12,6 +12,8 @@ namespace Gummi.Controllers
 {
 	public class HomeController : Controller
 	{
+
+				private GummiDbContext _db = new GummiDbContext();
         private IProductRepository productRepo;
 
             public HomeController(IProductRepository thisRepo = null)
@@ -29,6 +31,8 @@ namespace Gummi.Controllers
         // GET: /<controller>/
         public IActionResult Index()
 		{
+			 List<Product> mostRecent = _db.Products.OrderByDescending(x => x.ProductId).Take(3).ToList();
+				ViewData["mostRecent"] = mostRecent;
             return View();
         }
 

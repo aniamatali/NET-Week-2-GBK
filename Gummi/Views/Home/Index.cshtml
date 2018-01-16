@@ -1,7 +1,8 @@
-@model IEnumerable<Gummi.Models.Product>
+@using Gummi.Models
 
 @{
   Layout = "_Layout";
+  List<Product> mostRecent = (List<Product>)ViewData["mostRecent"];
 }
 
 <div class="contentbackground">
@@ -10,7 +11,11 @@
     <p>This app was created for the intention of users to keep track of inventory in their imaginary store.  You can create products to store reviews under and features will be added in the future such as ratings and perhaps some filters to view specific types of reviews.  Currently it has full CRUD capabilities for Reviews but only CRD for Products.</p>
 
     <br />
-    <h4>Reviewed Products</h4>
+    <h4>Top Reviewed Products</h4>
 
+    @foreach (var product in mostRecent)
+       {
+          <li>@product.Name</li>
+       }
 
 </div>
