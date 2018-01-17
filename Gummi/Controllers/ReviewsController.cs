@@ -26,7 +26,7 @@ namespace Gummi.Controllers
         private GummiDbContext db = new GummiDbContext();
     public IActionResult Index()
     {
-      return View(reviewRepo.Reviews.ToList());
+      return View(reviewRepo.Reviews.Include(x => x.Product).ToList());
     }
 
     public IActionResult Details(int id)
