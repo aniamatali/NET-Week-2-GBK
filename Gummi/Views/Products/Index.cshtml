@@ -12,6 +12,9 @@
         <th>
             Merchandise
         </th>
+			<th>
+            Average Rating
+        </th>
         <th></th>
     </tr>
 
@@ -21,6 +24,13 @@
             <td>
                 @Html.DisplayFor(modelProduct => listProduct.Name)
             </td>
+			 @{
+                double averageRating = listProduct.GetAverageRating();
+                
+                }
+			<td>
+               @Html.DisplayFor(m => averageRating)
+			</td>
             <td class="cellright">
                 @Html.ActionLink("Edit", "Edit", new { id = listProduct.ProductId }) |
                 @Html.ActionLink("Details", "Details", new { id = listProduct.ProductId }) |

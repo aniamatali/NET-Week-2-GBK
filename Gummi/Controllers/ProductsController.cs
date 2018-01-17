@@ -25,7 +25,7 @@ namespace Gummi.Controllers
 
 		public IActionResult Index()
 		{
-			return View(productRepo.Products.ToList());
+            return View(productRepo.Products.Include(x=>x.Reviews).ToList());
 		}
 
         public IActionResult Create()
