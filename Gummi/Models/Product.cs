@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System;
 
 namespace Gummi.Models
 {
@@ -31,6 +32,22 @@ namespace Gummi.Models
         public override int GetHashCode()
         {
             return this.ProductId.GetHashCode();
+        }
+
+        public double GetAverageRating()
+        {
+            double counter = 0;
+            double totalRating = 0;
+
+            foreach (var review in Reviews)
+            {
+                totalRating = totalRating + review.Rating;
+                counter++;
+            }
+
+            double result = totalRating / counter;
+
+            return result;
         }
     }
 }

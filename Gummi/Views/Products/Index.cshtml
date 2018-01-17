@@ -31,12 +31,7 @@
         </tr>
     }
 </table>
-    <h3>Top Three Reviewed Products:</h3>
-    @foreach (var listproduct in Model)
-    {
-
-            <h4>@Html.ActionLink((string)listproduct.Name , "Details", new { id = listproduct.ProductId })</h4>
-        }
-    @Html.ActionLink("New Product", "Create")
+   
+    @Html.ActionLink("Add New Product", "Create")
 
 </div>
